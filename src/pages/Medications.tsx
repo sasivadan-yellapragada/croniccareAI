@@ -93,15 +93,7 @@ export default function MedicationsPage() {
   });
 
   const apiFetch = async (path: string, init?: RequestInit): Promise<Response> => {
-    const urls = [path, `http://127.0.0.1:8000${path}`];
-    let last: Response | null = null;
-    for (const url of urls) {
-      const res = await fetch(url, init);
-      if (res.ok) return res;
-      last = res;
-      if (res.status !== 404) return res;
-    }
-    return last as Response;
+    return fetch(path, init);
   };
 
   const load = async (withHistory = includeHistory) => {
@@ -639,4 +631,3 @@ export default function MedicationsPage() {
     </div>
   );
 }
-

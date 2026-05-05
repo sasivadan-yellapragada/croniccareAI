@@ -50,15 +50,7 @@ async function fetchWithApiFallback(
   path: string,
   init?: RequestInit
 ): Promise<Response> {
-  const candidates = [path, `http://127.0.0.1:8000${path}`];
-  let last: Response | null = null;
-  for (const url of candidates) {
-    const res = await fetch(url, init);
-    if (res.ok) return res;
-    last = res;
-    if (res.status !== 404) return res;
-  }
-  return last as Response;
+  return fetch(path, init);
 }
 
 export async function signup(email: string, password: string, name?: string) {
@@ -137,9 +129,6 @@ export async function resetPassword(currentPassword: string, newPassword: string
     "/api/auth/password-reset",
     "/api/auth/reset-password",
     "/api/auth/change-password",
-    "http://127.0.0.1:8000/api/auth/password-reset",
-    "http://127.0.0.1:8000/api/auth/reset-password",
-    "http://127.0.0.1:8000/api/auth/change-password",
   ];
 
   let lastError = "";
@@ -155,4 +144,3 @@ export async function resetPassword(currentPassword: string, newPassword: string
   }
   throw new Error(lastError || "Password reset failed");
 }
-
