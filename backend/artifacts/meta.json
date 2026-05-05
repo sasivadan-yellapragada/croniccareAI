@@ -1,0 +1,55 @@
+{
+  "feature_cols": [
+    "General_Health",
+    "Checkup",
+    "Exercise",
+    "Skin_Cancer",
+    "Other_Cancer",
+    "Sex",
+    "Age_Category",
+    "Height_(cm)",
+    "Weight_(kg)",
+    "BMI",
+    "Smoking_History",
+    "Alcohol_Consumption",
+    "Fruit_Consumption",
+    "Green_Vegetables_Consumption",
+    "FriedPotato_Consumption"
+  ],
+  "numeric_cols": [
+    "Height_(cm)",
+    "Weight_(kg)",
+    "BMI",
+    "Alcohol_Consumption",
+    "Fruit_Consumption",
+    "Green_Vegetables_Consumption",
+    "FriedPotato_Consumption"
+  ],
+  "categorical_cols": [
+    "General_Health",
+    "Checkup",
+    "Exercise",
+    "Skin_Cancer",
+    "Other_Cancer",
+    "Sex",
+    "Age_Category",
+    "Smoking_History"
+  ],
+  "label_map": {
+    "Low": 0,
+    "Medium": 1,
+    "High": 2
+  },
+  "risk_to_score": {
+    "Low": 100,
+    "Medium": 60,
+    "High": 20
+  },
+  "model_classes": [
+    "High",
+    "Low",
+    "Medium"
+  ],
+  "test_accuracy": 0.6352824364868657,
+  "data_path": "/Users/sasivadan/Downloads/croniccareai/backend/ml/../../backend/data/CVD_cleaned.csv"
+}

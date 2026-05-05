@@ -1,0 +1,133 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Core palette - soft teal/blue wellness theme */
+    --background: 210 40% 97%;
+    --foreground: 220 30% 15%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 220 30% 15%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 220 30% 15%;
+
+    /* Teal primary */
+    --primary: 178 65% 38%;
+    --primary-foreground: 0 0% 100%;
+
+    /* Mint green secondary */
+    --secondary: 155 50% 92%;
+    --secondary-foreground: 155 40% 25%;
+
+    --muted: 210 30% 94%;
+    --muted-foreground: 215 20% 52%;
+
+    /* Light teal accent */
+    --accent: 178 50% 90%;
+    --accent-foreground: 178 65% 28%;
+
+    --destructive: 0 72% 55%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 210 25% 88%;
+    --input: 210 25% 88%;
+    --ring: 178 65% 38%;
+
+    --radius: 1rem;
+
+    /* Sidebar */
+    --sidebar-background: 0 0% 100%;
+    --sidebar-foreground: 220 30% 20%;
+    --sidebar-primary: 178 65% 38%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 178 50% 93%;
+    --sidebar-accent-foreground: 178 65% 28%;
+    --sidebar-border: 210 25% 90%;
+    --sidebar-ring: 178 65% 38%;
+
+    /* Custom tokens */
+    --gradient-primary: linear-gradient(135deg, hsl(178 65% 38%), hsl(200 70% 48%));
+    --gradient-hero: linear-gradient(160deg, hsl(178 65% 42%) 0%, hsl(200 70% 52%) 50%, hsl(155 55% 50%) 100%);
+    --gradient-card: linear-gradient(145deg, hsl(0 0% 100%), hsl(178 40% 97%));
+    --gradient-soft: linear-gradient(135deg, hsl(210 40% 98%), hsl(178 40% 95%));
+
+    --shadow-soft: 0 4px 24px -4px hsl(178 65% 38% / 0.12);
+    --shadow-card: 0 2px 16px -2px hsl(220 30% 15% / 0.08);
+    --shadow-glow: 0 8px 32px -8px hsl(178 65% 38% / 0.25);
+
+    /* Risk colors */
+    --risk-low: 155 55% 42%;
+    --risk-low-bg: 155 55% 94%;
+    --risk-medium: 38 90% 48%;
+    --risk-medium-bg: 38 90% 95%;
+    --risk-high: 5 80% 52%;
+    --risk-high-bg: 5 80% 95%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Inter', sans-serif;
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+    -webkit-font-smoothing: antialiased;
+  }
+
+  h1, h2, h3, h4 {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+  }
+}
+
+@layer utilities {
+  .gradient-primary {
+    background: var(--gradient-primary);
+  }
+
+  .gradient-hero {
+    background: var(--gradient-hero);
+  }
+
+  .gradient-card {
+    background: var(--gradient-card);
+  }
+
+  .gradient-soft {
+    background: var(--gradient-soft);
+  }
+
+  .shadow-soft {
+    box-shadow: var(--shadow-soft);
+  }
+
+  .shadow-card {
+    box-shadow: var(--shadow-card);
+  }
+
+  .shadow-glow {
+    box-shadow: var(--shadow-glow);
+  }
+
+  .risk-low {
+    color: hsl(var(--risk-low));
+    background-color: hsl(var(--risk-low-bg));
+  }
+
+  .risk-medium {
+    color: hsl(var(--risk-medium));
+    background-color: hsl(var(--risk-medium-bg));
+  }
+
+  .risk-high {
+    color: hsl(var(--risk-high));
+    background-color: hsl(var(--risk-high-bg));
+  }
+}
